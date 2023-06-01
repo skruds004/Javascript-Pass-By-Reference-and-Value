@@ -106,3 +106,38 @@ console.log(personThree, personOne);
  * Everyone gets a lot older
  * Create a function clonePerson that makes deep copies with an age of 0
  *************************************************************************/
+personOne.age += 300;
+personTwo.age += 300;
+personThree.age += 300;
+
+function clonePerson(oldPerson) {
+    const newPerson = {
+        name: {},
+        age: null,
+        location: {}
+    };
+
+    newPerson.name.first = oldPerson.name.first;
+    newPerson.name.last = oldPerson.name.last;
+    newPerson.age = 0;
+    newPerson.location.city = oldPerson.location.city;
+    newPerson.location.state = oldPerson.location.state;
+    newPerson.location.zip = oldPerson.location.zip;
+
+    return newPerson;
+}
+
+const cloneOne = clonePerson(personOne);
+const cloneTwo = clonePerson(personTwo);
+const cloneThree = clonePerson(personThree);
+
+const nLoc4 = {
+    city: 'Tatooine',
+    state: 'desert',
+    zip: 'lawl'
+}
+
+moveLocation(cloneOne, nLoc4);
+moveLocation(cloneThree, nLoc);
+
+console.log(cloneOne, cloneThree, personOne, personThree);
