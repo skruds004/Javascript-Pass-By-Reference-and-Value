@@ -141,3 +141,23 @@ moveLocation(cloneOne, nLoc4);
 moveLocation(cloneThree, nLoc);
 
 console.log(cloneOne, cloneThree, personOne, personThree);
+
+/*****************************************************************
+ * The hive mind has taken over as usual
+ * Everyone gets a new thoughts object that is a reference and should
+ * be updated in one line of code
+ */
+
+const thoughts = {
+    thoughts: 'sad'
+}
+
+personOne.thoughts = thoughts;
+personTwo.thoughts = thoughts;
+personThree.thoughts = thoughts;
+cloneOne.thoughts = thoughts;
+cloneTwo.thoughts = thoughts;
+cloneThree.thoughts = thoughts;
+console.log(personOne);
+thoughts.thoughts = 'Thinking about world domination';
+console.log(personOne, personTwo, personThree);
